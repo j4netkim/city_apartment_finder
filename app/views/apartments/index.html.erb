@@ -1,5 +1,7 @@
 <h1>Apartments</h1>
 
+<%= flash[:message] %>
+
 <% @apartments.each do |apartment| %>
 <ul>
     <li><%= apartment.building %></li>
