@@ -1,3 +1,11 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  
+
+  get '/owners/all', :to => 'owners#all', :as => :all
+  post 'owners/:id/buildings/new', :to => 'buildings#create'
+
+  resources :owners do 
+    resources :buildings
+  end 
+  root 'home#index'
 end
