@@ -1,0 +1,21 @@
+<%= form_for @building, url: @url do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br><br>
+    <%= f.label :address %>
+    <%= f.text_field :address %><br><br>
+    
+    <h2>Apartments:</h2>
+    <%= f.fields_for :apartments, @building.apartments do |g| %>
+        Unit: <%= g.text_field :unit %><br><br>
+        Rent: <%= g.text_field :rent %><br><br>
+        Occupants: <%= g.text_field :occupants %><br><br>
+        Description: <%= g.text_field :description %><br><br>
+
+
+    <%= g.fields_for :amenities, g.object.amenities.build do |amenity_field| %>
+        <%= label_tag "Add Amenity:" %>
+        <%= amenity_field.text_field :name %>
+    <% end %>
+    <br><br>
+    <%= f.submit %>
+<% end %>
