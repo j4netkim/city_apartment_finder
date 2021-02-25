@@ -1,7 +1,7 @@
 <h1>Welcome to City Apartment Finder</h1>
 <% if current_user %>
     <% if current_user.role.nil? %>
-        <p>A user may be an Owner or Resident.</p>
+        <p>A user must be an Owner.</p>
         <h4>Select <%= link_to('owner', new_owner_path) %> or Resident</h4>
     <% else %>
         <p>You're a <%= current_user.role %>.</p>

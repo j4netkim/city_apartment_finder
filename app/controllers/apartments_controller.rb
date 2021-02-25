@@ -1,8 +1,11 @@
 class ApartmentsController < ApplicationController
     def index
-        @apartments = Apartment.all
+        @apartments = Apartment.lowest_rents
     end
 
     def show
+        @apartment = Apartment.find(params[:id])
+        @url = owner_building_path
+        if @apartment.
     end
 end

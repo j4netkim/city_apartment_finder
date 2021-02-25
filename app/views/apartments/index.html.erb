@@ -4,6 +4,6 @@
 
 <% @apartments.each do |apartment| %>
 <ul>
-    <li><%= apartment.building %></li>
+    <li><%= link_to apartment.building, apartment_path(apartment.id) %></li>
 </ul>
 <% end %>

@@ -5,4 +5,10 @@ class Apartment < ApplicationRecord
     validates :unit, presence: true
     validates_uniqueness_of :unit, scope: :building_id
     validates_numericality_of :rent
+
+
+
+    def self.lowest_rents
+        self.order(rent: :asc)
+     end
 end
