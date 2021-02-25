@@ -1,0 +1,10 @@
+<% if @owners.size > 0 %>
+    <p>All buildings:</p>
+    <ul>
+        <% @owners.each do |g| %>
+            <li><%= g.name %></li>
+        <% end %>
+    </ul>
+<% else %>
+    <p>Owners unavailable.</p>
+<% end %>

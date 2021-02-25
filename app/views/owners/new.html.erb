@@ -1,0 +1,7 @@
+<h2>Owner Sign Up</h2>
+<% if @owner.errors.any? %>
+    <% @owner.errors.full_messages.each do |message| %>
+        Error: <%= message %><br>
+    <% end %>
+<% end %>
+<% render 'form', owner: @owner %>
