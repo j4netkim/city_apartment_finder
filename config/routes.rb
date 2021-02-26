@@ -7,8 +7,11 @@ Rails.application.routes.draw do
   post 'owners/:id/buildings/new', :to => 'buildings#create'
 
   resources :owners, only: [:new, :show, :create]
-
   
+  resources :amenities, only: [:new, :show, :create]
+    resources :apartments, only: [:index, :new, :create]
+    
+
   get '/auth/google_oauth2/callback', :to => 'sessions#omniauth'
 
 
