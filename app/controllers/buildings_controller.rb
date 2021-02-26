@@ -7,9 +7,9 @@ class BuildingsController < ApplicationController
     end
 
     def show
-        # @building = Building.find(params[:id])
-        # @url = owner_building_path
-        # if 
+        @building = Building.find(params[:id])
+        @url = owner_building_path
+        @building.apartments.present?
     end
 
     def create

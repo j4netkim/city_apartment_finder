@@ -1,10 +1,10 @@
 class SessionsController < ApplicationController
 
     def omniauth
-        user = User.create_from_omniauth(auth)
+        owner = Owner.create_from_omniauth(auth)
 
-        if user.valid?
-            session[:user_id] = user.id
+        if owner.valid?
+            session[:owner_id] = owner.id
             redirect_to apartments_path 
         else
             flash[:message] = user.errors.full_messages.join("")
