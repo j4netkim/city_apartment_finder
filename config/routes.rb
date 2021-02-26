@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get '/apartments', :to => 'apartments#index'
+
 
   resources :users
   get '/owners/all', :to => 'owners#all', :as => :all

@@ -10,3 +10,9 @@ building.create([
     {unit: 7E, rent: 2,610, description: "71 Broadway Apartments offers both convenience and style.", occupants: 2},
     {unit: 15H, rent: 2,595, description: "corner alcove studio.", occupants: 1}
 ])
+
+owner.create ([
+    {name: Eren Yeager},
+    {name: Levi Ackermann}
+    {name: Sasha Braus}
+])

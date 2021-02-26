@@ -10,7 +10,7 @@ class OwnersController < ApplicationController
     def create
         @owner = Owner.new(name: owner_params[:name], user: current_user)
         if @owner.save
-            @owner.user.
+            @owner.user.set_owner
             redirect_to owner_path(@owner)
         else
             flash[:message] = "Owner failed to save."

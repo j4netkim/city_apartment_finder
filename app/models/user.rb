@@ -8,5 +8,11 @@ class User < ApplicationRecord
             u.username = auth['info']['name']
             u.email = auth['info']['email']
             u.password = SecureRandom.hex(20)
+        end
+    end
+
+    def self.set_owner
+        self.role = :owner
+        self.save
     end
 end
