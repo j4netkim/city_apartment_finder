@@ -1,6 +1,7 @@
 class OwnersController < ApplicationController
     def all
         @owners = Owner.all
+        render :all
     end
 
     def new
@@ -9,6 +10,7 @@ class OwnersController < ApplicationController
 
     def create
         @owner = Owner.new(name: owner_params[:name], user: current_user)
+        byebug
         if @owner.save
             @owner.user.set_owner
             redirect_to owner_path(@owner)

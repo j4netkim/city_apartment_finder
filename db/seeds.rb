@@ -16,3 +16,8 @@ owner.create ([
     {name: Levi Ackermann}
     {name: Sasha Braus}
 ])
+
+
+user.create ([
+    {username: "eyeager", email: "ereny456@gmail.com", password: "string"}
+])
