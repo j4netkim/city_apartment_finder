@@ -1,26 +1,22 @@
 class BuildingsController < ApplicationController
 
     def new
-        @owner = Owner.find(params[:owner_id])
         @building = Building.new
-        @url = new_owner_building_path(@owner)
     end
 
     def show
         @building = Building.find(params[:id])
-        @url = owner_building_path
         @building.apartments.present?
     end
 
     def create
-        @owner = Owner.find(params[:id])
-        @building = @Owner.buildings.build
-        @building.update_attributes(building_params)
+        byebug
+        @building = current_owner.buildings.build(building_params)
         if @building.save
-            redirect_to owner_building_path(@building.owner, @building)
+            redirect_to building_path(building)
         else
             flash[:message] = "Could not be saved."
-            redirect_to new_owner_building_path(@owner)
+            render :new
         end
     end
 

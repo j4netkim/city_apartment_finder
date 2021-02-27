@@ -3,16 +3,16 @@ Owner: <%= @owner.name %>
 <br>
 
 <h3>Owned Buildings:</h3>
-<% if @buildings.empty? %>
+<% if @owner.buildings.empty? %>
     <p>No buildings at this time.</p>
 <% else %>
     <p>Select to edit building.</p>
     <ul>
-        <li><%= link_to name, owner_building_path(@owner, )%></li>
+        <% @owner.buildings.each do |b| %>
+            <li><%= link_to b.name, building_path(b) %></li>    
         <% end %>
     </ul>
 <% end %>
 
-<%= link_to 'Add Building', new_owner_building_path(@owner) %><br>
+<%= link_to 'Add Building', new_building_path %><br>
 
-<%= link_to 'See all owners.', all_path %>

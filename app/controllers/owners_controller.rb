@@ -9,10 +9,9 @@ class OwnersController < ApplicationController
     end
 
     def create
-        @owner = Owner.new(name: owner_params[:name], user: current_user)
-        byebug
+        @owner = Owner.new(owner_params)
         if @owner.save
-            @owner.user.set_owner
+            session[:owner_id] = @owner.id
             redirect_to owner_path(@owner)
         else
             flash[:message] = "Owner failed to save."
@@ -22,12 +21,11 @@ class OwnersController < ApplicationController
 
     def show
         @owner = Owner.find(params[:id])
-        @buildings = @Owner.buildings.all
     end
 
     private
 
     def owner_params
-        params.require(:owner).permit(:name)
+        params.require(:owner).permit(:name, :email, :password)
     end
 end
