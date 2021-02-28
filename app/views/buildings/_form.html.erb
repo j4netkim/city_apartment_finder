@@ -1,8 +1,6 @@
 <%= form_for @building do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %><br><br>
-    <%= f.label :address %>
-    <%= f.text_field :address %><br><br>
+    Building Name: <%= f.text_field :name %><br><br>
+    Address: <%= f.text_field :address %><br><br>
     
     <%= f.submit %>
 <% end %>
