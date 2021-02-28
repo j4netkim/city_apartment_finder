@@ -4,3 +4,7 @@ Apartment's Buildings
 <%= render partial: '/buildings/building', collection: @apartment.buildings %>
 
 <%= link_to("Make a new #{@apartment.unit}", new_apartment_building_path(@apartment.id)) %>
+<br /><br />
+Apartment's Amenities
+<%= render partial: 'amenities/amenity', collection: @apartment.amenities %>
+<%= link_to("Add a new #{@apartment.unit}", new_apartment_amenity_path(@apartment.id)) %>
