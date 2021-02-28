@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/apartments', :to => 'apartments#index'
   get '/log_in', :to => 'sessions#new'
   post '/log_in', :to => 'sessions#create'
+  get '/log_out', :to => 'sessions#destroy'
 
   
 
@@ -16,7 +17,6 @@ Rails.application.routes.draw do
     resources :buildings, only: [:index, :new, :create]
   end
 
-  resources :amenities, only: [:index, :show, :new, :create]
 
   get '/auth/google_oauth2/callback', :to => 'sessions#omniauth'
 

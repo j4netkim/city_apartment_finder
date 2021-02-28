@@ -8,11 +8,6 @@ class Apartment < ApplicationRecord
     accepts_nested_attributes_for :apartment_amenities
 
 
-
-    # def self.lowest_rents
-    #     self.order(rent: :desc)
-    #  end
-
     def amenity_types=(amenity_types)
         amenity_types.values.each do |amenity_type|
             if amenity_type[:name].present?
@@ -22,3 +17,10 @@ class Apartment < ApplicationRecord
         end
     end
 end
+
+
+
+
+    # def self.lowest_rents
+    #     self.order(rent: :desc)
+    #  end

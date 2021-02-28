@@ -14,6 +14,11 @@ class SessionsController < ApplicationController
         end
     end
 
+    def destroy
+        session.delete :owner_id
+        redirect_to log_out_path
+    end
+
 
     def omniauth
         owner = Owner.create_from_omniauth(auth)
