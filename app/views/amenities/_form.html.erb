@@ -1,0 +1,12 @@
+<%= form_for([@apartment, @amenity]) do |f| %>
+    <%= f.label :apartment %>
+    <%= f.collection_select :apartment_id, Apartment.all, :id, :name, prompt: true %>
+    <%= f.fields_for :apartment do |b| %>
+        <%= render partial: 'apartments/fields', locals: {f: b} %>
+    <% end %>
+    <br>
+    <%= f.label :name %>
+
+    <%= f.submit %>
+<% end %>
+
