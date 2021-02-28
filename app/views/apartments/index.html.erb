@@ -1,11 +1,13 @@
 <%= display_header(@amenity) %>
 
-<h1>Apartments</h1>
-
 <%= flash[:message] %>
 
-<% @apartments.each do |apartment| %>
+<h2>All Apartments</h2>
+
 <ul>
-    <li><%= link_to apartment.building, apartment_path(apartment.id) %></li>
-</ul>
+<% @apartments.each do |apartment| %>
+    <li><%= link_to(apartment.unit, apartment_path(apartment.id)) %></li>
 <% end %>
+</ul>
+
+<%= link_to('New Apartment', new_apartment_path) %>
