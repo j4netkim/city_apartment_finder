@@ -7,4 +7,12 @@ module BuildingHelper
             tag.h2("All Buildings")
         end
     end
+
+    def display_apartment_fields(apartment)
+        if apartment
+            f.hidden_field :apartment_id
+        else
+            render partial: 'apartment_select', locals: {f: f}
+        end
+    end
 end
