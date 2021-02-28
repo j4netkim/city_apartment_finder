@@ -9,7 +9,12 @@ class BuildingsController < ApplicationController
     end
     
     def new
-        @building = Building.new
+        if params[:apartment_id] && @apartment = Apartment.find_by_id(params[:apartment_id])
+            @buildings = @apartment.buildings.build
+        else
+            @building = Building.new
+            @buildings = Building.ordered_by_rent
+        end
     end
 
     def show
