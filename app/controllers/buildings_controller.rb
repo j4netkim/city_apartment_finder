@@ -10,10 +10,10 @@ class BuildingsController < ApplicationController
     end
 
     def create
-        byebug
+        # byebug
         @building = current_owner.buildings.build(building_params)
         if @building.save
-            redirect_to building_path(building)
+            redirect_to building_path(@building)
         else
             flash[:message] = "Could not be saved."
             render :new
