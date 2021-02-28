@@ -9,9 +9,9 @@ class Apartment < ApplicationRecord
 
 
 
-    def self.lowest_rents
-        self.order(rent: :asc)
-     end
+    # def self.lowest_rents
+    #     self.order(rent: :desc)
+    #  end
 
     def amenity_types=(amenity_types)
         amenity_types.values.each do |amenity_type|
