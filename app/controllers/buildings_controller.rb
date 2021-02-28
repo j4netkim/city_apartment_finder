@@ -1,5 +1,13 @@
 class BuildingsController < ApplicationController
 
+    def index
+        if params[:apartment_id] && @apartment = Apartment.find_by_id(params[:apartment_id])
+            @buildings = @apartment.buildings.ordered_by_rent
+        else
+            @buildings = Building.ordered_by_rent
+        end
+    end
+    
     def new
         @building = Building.new
     end
