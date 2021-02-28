@@ -1,4 +1,5 @@
 class ApartmentsController < ApplicationController
+    
     def index
         if params[:amenity_id] && @amenity = Amenity.find_by_id(params[:amenity_id])
             @apartments = @amenity.apartments

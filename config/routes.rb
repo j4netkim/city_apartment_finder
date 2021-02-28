@@ -12,10 +12,15 @@ Rails.application.routes.draw do
 
   resources :owners, only: [:new, :show, :create]
 
-  
+  # resources :apartments do
+  #   resources :buildings, only: [:index, :new, :create]
+  # end
+
   resources :apartments do
-    resources :buildings, only: [:index, :new, :create]
+    resources :buildings, shallow: true
+    resources :amenities, shallow: true
   end
+
 
 
   get '/auth/google_oauth2/callback', :to => 'sessions#omniauth'

@@ -1,4 +1,5 @@
 class OwnersController < ApplicationController
+    
     def all
         @owners = Owner.all
         render :all
