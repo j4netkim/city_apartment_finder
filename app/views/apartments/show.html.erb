@@ -1,0 +1,6 @@
+<h1><%= @apartment.unit %></h1>
+
+Apartment's Buildings
+<%= render partial: '/buildings/building', collection: @apartment.buildings %>
+
+<%= link_to("Make a new #{@apartment.unit}", new_apartment_building_path(@apartment.id)) %>
