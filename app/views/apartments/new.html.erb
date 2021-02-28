@@ -1,8 +1,12 @@
 <h2>Add Building to Apartment:</h2>
 
-<%= form_for @building do |f| %>
-    Building Name: <%= f.text_field :name %><br><br>
-    Address: <%= f.text_field :address %><br><br>
+# <%= form_for @building.apartments do |f| %>
+    # Building Name: <%= f.text_field :name %>
+    <br />
+    Unit: <%= f.text_field :unit %><br><br>
+    Rent: <%= f.text_field :rent %><br><br>
+    Description: <%= f.text_field :description %><br><br>
+    Occupants: <%= f.text_field :occupants %><br><br>
     
     <%= f.submit %>
 <% end %>

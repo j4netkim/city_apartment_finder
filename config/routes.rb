@@ -12,8 +12,8 @@ Rails.application.routes.draw do
   resources :owners, only: [:new, :show, :create]
 
   
-  resources :buildings do
-    resources :apartments, only: [:index, :new, :create]
+  resources :apartments do
+    resources :buildings, only: [:index, :new, :create]
   end
 
   resources :amenities, only: [:index, :show, :new, :create]
