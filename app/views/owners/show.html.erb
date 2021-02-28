@@ -1,18 +1,18 @@
-<h2>Owner Profile</h2>
-Owner: <%= @owner.name %>
-<br>
+<h1>Owner Profile</h1>
+Registered Owner: <%= @owner.name %>
+<br /><br /><br />
 
-<h3>Owned Buildings:</h3>
+<h2>Currently Owned Buildings:</h2>
 <% if @owner.buildings.empty? %>
-    <p>No buildings at this time.</p>
+    <p>You don't have any buildings at this time.</p>
 <% else %>
-    <p>Select to edit building.</p>
+    <p>Select to edit your building</p>
     <ul>
         <% @owner.buildings.each do |b| %>
             <li><%= link_to b.name, building_path(b) %></li>    
         <% end %>
     </ul>
 <% end %>
-
+<br/>
 <%= link_to 'Add Building', new_building_path %><br>
 

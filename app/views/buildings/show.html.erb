@@ -1,5 +1,11 @@
-# information about building
-<h1><%= Building Information%></h1>
+<h1>Building Information:</h1>
+<br />
+<%= form_for @building do |f| %>
+    Building Name: <%= f.text_field :name %><br><br>
+    Edit Address: <%= f.text_field :address %><br><br>
+    
+    <%= f.submit %>
+<% end %>
 
 <% if flash[:message] %>
     <div class = "field_with_error"><%= flash[:message]%></div>

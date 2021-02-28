@@ -21,12 +21,12 @@ class BuildingsController < ApplicationController
     end
 
     def update 
-        @url = owner_building_path
+        # @url = owner_building_path
         @building = Building.find(params[:id])
         @building.update_attributes(building_params)
         if @building.save
             flash[:message] = "Building saved."
-            redirect_to owner_building_path(@building.owner, @building)
+            redirect_to new_building_apartment_path(@building.owner, @building)
         else
             flash[:message] = "Building failed to save."
             render :show
