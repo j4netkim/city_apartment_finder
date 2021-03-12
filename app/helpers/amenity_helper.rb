@@ -7,3 +7,4 @@ module AmenityHelper
             tag.h2("All Amenities")
         end
     end
+end
