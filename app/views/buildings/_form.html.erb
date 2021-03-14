@@ -1,4 +1,4 @@
-<%= form_for ([@apartment, @building]) do |f| %>
+<%= form_for building_path([@apartment, @building]) do |f| %>
     <%= display_apartment_fields(@apartment, f) %>
     <br />
     <%= f.label :rent %>

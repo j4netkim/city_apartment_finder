@@ -39,7 +39,7 @@ class BuildingsController < ApplicationController
         @building.update_attributes(building_params)
         if @building.save
             flash[:message] = "Building saved."
-            redirect_to new_building_apartment_path(@building.owner, @building)
+            redirect_to new_apartment_building_path(@building.owner, @building)
         else
             flash[:message] = "Building failed to save."
             render :show
