@@ -8,7 +8,7 @@ module BuildingHelper
         end
     end
 
-    def display_apartment_fields(apartment)
+    def display_apartment_fields(apartment, f)
         if apartment
             f.hidden_field :apartment_id
         else

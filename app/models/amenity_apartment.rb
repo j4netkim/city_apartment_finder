@@ -1,0 +1,2 @@
+class AmenityApartment < ApplicationRecord
+end

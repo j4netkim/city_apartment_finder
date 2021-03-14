@@ -1,5 +1,5 @@
 <%= f.label :apartment %>
     <%= f.collection_select :apartment_id, Apartment.all, :id, :unit, prompt: true %>
     <%= f.fields_for :apartment do |b| %>
-        <%= render partial: 'apartments/fields', locals: {f: g} %>
+        <%= render partial: 'apartments/fields', locals: {f: b} %>
     <% end %>
