@@ -7,16 +7,35 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+            
   </head>
 
   <body>
-    <div>
-      <% if logged_in? %>
-        <%= link_to owners_path %>
-        <%= link_to log_out_path, method: "delete" %>
-      <% end %>
+    <nav class="pink lighten-4">
+      <div class="container">
+        <a href="/" class="brand-logo">Home</a>
+        <ul class="right">
+          <% if logged_in? %>
+            <li><a href="/log_out" %>Logout</a></li>
+          <% else %>
+            <li><a href="/signup">Sign Up</a></li>
+            <li><a href="/log_in">Log In</a></li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
     </div>
-    
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
   <%= button_to("Google Log In", '/auth/google_oauth2') %>
 
     <%= yield %>
