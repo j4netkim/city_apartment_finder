@@ -2,6 +2,8 @@ class Owner < ApplicationRecord
     has_many :buildings
     has_many :apartments, through: :buildings
     validates :name, presence: true
+    validates :email, presence: true
+    validates :password, presence: true
 
     has_secure_password
     # adds password and password confirmation attribute 

@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   get '/apartments', :to => 'apartments#index'
   get '/log_in', :to => 'sessions#new'
   post '/log_in', :to => 'sessions#create'
+  get '/signup', :to => 'owners#new'
+  post '/signup', :to => 'owners#create'
   get '/log_out', :to => 'sessions#destroy'
-  delete '/log_out', :to => 'sessions#destroy'
 
 
   
