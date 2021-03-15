@@ -13,3 +13,6 @@
 <% if flash[:message] %>
     <div class = "field_with_error"><%= flash[:message]%></div>
 <% end %>
+
+<h2>Building Apartments</h2>
+<%= render partial: 'apartments/apartments', collection: @building.apartments, as: :apartment %>

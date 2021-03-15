@@ -1,11 +1,11 @@
 class Apartment < ApplicationRecord
     belongs_to :building
-    has_many :apartment_amenities
-    has_many :amenities, through: :apartment_amenities
+    has_many :amenity_apartments
+    has_many :amenities, through: :amenity_apartments
     validates :unit, presence: true
     validates_uniqueness_of :unit, scope: :building_id
     validates_numericality_of :rent
-    accepts_nested_attributes_for :apartment_amenities
+    accepts_nested_attributes_for :amenity_apartments
 
 
     def amenity_types=(amenity_types)
