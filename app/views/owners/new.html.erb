@@ -1,7 +1,17 @@
 <h2>Owner Sign Up</h2>
+<br />
 <% if @owner.errors.any? %>
     <% @owner.errors.full_messages.each do |message| %>
         Error: <%= message %><br>
     <% end %>
 <% end %>
-<%= render 'form', owner: @owner %>
+
+<%= form_with url: '/owners/new' do |f| %>
+    Name: <%= f.text_field :name %>
+    <br /><br />
+    Email: <%= f.text_field :email %>
+    <br /><br />
+    Password: <%= f.password_field :password %>
+    <br /><br /><br />
+    <%= submit_tag  'Register' %>
+   <% end %>

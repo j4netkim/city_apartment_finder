@@ -4,17 +4,16 @@ Rails.application.routes.draw do
   get '/log_in', :to => 'sessions#new'
   post '/log_in', :to => 'sessions#create'
   get '/log_out', :to => 'sessions#destroy'
+  delete '/log_out', :to => 'sessions#destroy'
+
 
   
 
 
   
 
-  resources :owners, only: [:new, :show, :create]
+  resources :owners
 
-  # resources :apartments do
-  #   resources :buildings, only: [:index, :new, :create]
-  # end
 
   resources :buildings do
     resources :apartments, shallow: true
