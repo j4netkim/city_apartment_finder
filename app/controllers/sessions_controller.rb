@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
             session[:owner_id] = @owner.id
             redirect_to owner_path(@owner)
         else
-            flash[:message] = "Owner failed to save."
+            flash[:message] = "Invalid email/password."
             render :new
         end
     end
