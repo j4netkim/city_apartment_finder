@@ -17,3 +17,6 @@ class AmenitiesController < ApplicationController
         end
     end
 end
+
+# build wont create record in database just create new obj in
+# memory so view can take object and display for a form
