@@ -1,13 +1,14 @@
 class SessionsController < ApplicationController
 
     def new
+        @owner = Owner.new
     end
 
     def create
-        @owner = Owner.find_by(email: params[:email])
-        if @owner && @owner.authenticate(params[:password])
+        @owner = Owner.find_by(email: params[:owner][:email])
+        if @owner && !!@owner.authenticate(params[:owner][:password])
             session[:owner_id] = @owner.id
-            redirect_to owner_path(@owner)
+            redirect_to owner_path(@owner.id)
         else
             flash[:message] = "Invalid email/password."
             render :new

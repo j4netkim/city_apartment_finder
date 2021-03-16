@@ -14,17 +14,17 @@
             
   </head>
 
-  <body>
+  <body class="homepage">
     <nav class="pink lighten-4">
       <div class="container">
         <a href="/" class="brand-logo">Home</a>
         <ul class="right">
-          <% if logged_in? %>
+          
             <li><a href="/log_out" %>Logout</a></li>
-          <% else %>
+          
             <li><a href="/signup">Sign Up</a></li>
             <li><a href="/log_in">Log In</a></li>
-          <% end %>
+          
         </ul>
       </div>
     </nav>
@@ -36,7 +36,9 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-  <%= button_to("Google Log In", '/auth/google_oauth2') %>
+    <%= button_to("Google Log In", '/auth/google_oauth2') %>
+    
+    
 
     <%= yield %>
   </body>

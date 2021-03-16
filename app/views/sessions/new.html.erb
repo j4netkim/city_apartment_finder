@@ -1,10 +1,14 @@
 <h2 class="center pink-text text-lighten-3">Log In:</h2>
 <br>
-<%= form_with url: '/log_in', scope: :session, local: true do |f| %>
-    Email: <%= f.text_field :email %><br>
-    <br /><br />
-    Password: <%= f.password_field :password %><br>
-    <br /><br />
+<%= form_with(model: @owner, url: '/log_in', local: true) do |f| %>
+    <div class-"input-field">
+        Email: <%= f.email_field :email %><br>
+        <br /><br />
+    </div>
+    <div class="input-field">
+        Password: <%= f.password_field :password %><br>
+        <br /><br />
+    </div>
 
     <%= f.submit "log in"%>
 <% end %>
