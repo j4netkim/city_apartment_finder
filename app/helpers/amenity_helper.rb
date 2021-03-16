@@ -2,9 +2,9 @@ module AmenityHelper
     
     def display_header(apartment)
         if apartment
-            tag.h1("All #{apartment.unit}'s Amenities")
+            tag.h3("All #{apartment.unit}'s Amenities")
         else
-            tag.h2("All Amenities")
+            tag.h3("All Amenities")
         end
     end
 end

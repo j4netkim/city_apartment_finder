@@ -12,12 +12,17 @@
         <br /><br />
     </div>
     <div class="input-field">
+    Username: <%= f.text_field :username %>
+    <br /><br />
+</div>
+    <div class="input-field">
         Email: <%= f.email_field :email %>
         <br /><br />
     </div>
     <div class="input-field">    
         Password: <%= f.password_field :password %>
         <br /><br /><br />
-    </div>    
+    </div>   
     <%= f.submit  'Register'%>
    <% end %>
+</form>

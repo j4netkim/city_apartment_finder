@@ -10,6 +10,7 @@ o1 = Owner.create!(name: "Eren Yeager", username:"eyeager", email: "ereny456@gma
 o2 = Owner.create!(name: "Levi Ackermann", username: "lackermann", email: "levia67@gmail.com", password: "titan")
 o3 = Owner.create!(name: "Sasha Braus", username: "sbraus", email: "sashab95", password: "scouts")
 
+
 b1 = Building.create!(owner: o1, name: "37 Wall Street", address: "37 Wall Street New York, NY 10005")
 b2 = Building.create!(owner: o1, name: "71 Broadway", address: "71 Broadway New York,NY 10006")
 b3 = Building.create!(owner: o2, name: "Greenwich Club", address: "88 Greenwich Street New York,NY 10006")

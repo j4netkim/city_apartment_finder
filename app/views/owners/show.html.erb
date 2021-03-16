@@ -1,5 +1,6 @@
 <h3 class="center pink-text text-lighten-3">Owner Profile</h3>
-Registered Owner: <%= @owner.name %>
+<h5 class="pink-text text-lighten-3">Registered Owner:</h5> 
+<%= @owner.name %>
 <br /><br /><br />
 
 <h5 class="pink-text text-lighten-3">Currently Owned Buildings:</h5>
@@ -15,4 +16,7 @@ Registered Owner: <%= @owner.name %>
 <% end %>
 <br/>
 
+<form method="get">
+    <input type="submit" value="Add Apartment" name="Add Apartment" class="pink lighten-3">
+</form>
 

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   
 
   resources :owners
+  resources :buildings, only: [:new, :edit]
 
 
   resources :buildings do
