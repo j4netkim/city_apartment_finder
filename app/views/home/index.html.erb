@@ -4,9 +4,15 @@
 <center><img src="https://data.whicdn.com/images/217747722/original.jpg" alt="dream apartment weheartit" class="center"></center>
 
 <br />
-<center><%= link_to "Log In", '/log_in'%></center><br>
+
+<form action="/log_in" method="get">
+    <center><input type="submit" value="Log In" name="Log In" class="btn pink lighten-2"></center><br>
+</form>
 <br />
-<center><%= link_to "Sign Up", new_owner_path %></center>
+
+<form action="/signup" method="get">
+<center><input type="submit" value="Sign Up" name ="Sign Up" class="btn pink lighten-2"></center>
+</form>
 
 
    
