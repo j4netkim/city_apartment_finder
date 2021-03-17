@@ -7,19 +7,19 @@
 <% end %>
 
 <%= form_with(model: @owner, url: '/signup', local: true) do |f| %>
-    <div class="input-field">
+    <div class="input-field pink-text text-darken-3">
         Name: <%= f.text_field :name %>
         <br /><br />
     </div>
-    <div class="input-field">
+    <div class="input-field pink-text text-darken-3">
     Username: <%= f.text_field :username %>
     <br /><br />
 </div>
-    <div class="input-field">
+    <div class="input-field pink-text text-darken-3">
         Email: <%= f.email_field :email %>
         <br /><br />
     </div>
-    <div class="input-field">    
+    <div class="input-field pink-text text-darken-3">    
         Password: <%= f.password_field :password %>
         <br /><br /><br />
     </div>   

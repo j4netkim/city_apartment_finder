@@ -1,11 +1,11 @@
 <h2 class="center pink-text text-lighten-3">Log In:</h2>
 <br>
 <%= form_with(model: @owner, url: '/log_in', local: true) do |f| %>
-    <div class-"input-field">
+    <div class="input-field pink-text text-darken-3">
         Email: <%= f.email_field :email %><br>
         <br /><br />
     </div>
-    <div class="input-field">
+    <div class="input-field pink-text text-darken-3">
         Password: <%= f.password_field :password %><br>
         <br /><br />
     </div>
