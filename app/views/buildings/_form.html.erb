@@ -1,9 +1,10 @@
-<%= form_for building_path([@apartment, @building]) do |f| %>
-    <%= display_apartment_fields(@apartment, f) %>
+<%= form_for @building do |f| %>
     <br />
-    <%= f.label :rent %>
-    <%= f.number_field :rent, min: 0, step: 0.01 %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
     <br />
+    <%= f.label :address %>
+    <%= f.text_field :address %>
 
     <%= f.submit %>
 <% end %>

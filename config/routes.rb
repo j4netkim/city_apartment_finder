@@ -17,7 +17,9 @@ Rails.application.routes.draw do
   
 
   resources :buildings do
-    resources :apartments, shallow: true
+    resources :apartments, shallow: true do
+      resources :amenity_apartments, only: [:new, :create, :destroy]
+    end
   end
 
   resources :amenities

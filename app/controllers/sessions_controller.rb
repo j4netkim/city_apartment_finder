@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
     def create
         @owner = Owner.find_by(email: params[:owner][:email])
-        if @owner && !!@owner.authenticate(params[:owner][:password])
+        if @owner && @owner.authenticate(params[:owner][:password])
             session[:owner_id] = @owner.id
             redirect_to owner_path(@owner.id)
         else
@@ -17,13 +17,13 @@ class SessionsController < ApplicationController
 
     def destroy
         session.delete :owner_id
-        redirect_to log_out_path
+        redirect_to log_in_path
     end
 
 
     def omniauth
         owner = Owner.create_from_omniauth(auth)
-
+        
         if owner.valid?
             session[:owner_id] = owner.id
             redirect_to owner_path(owner) 

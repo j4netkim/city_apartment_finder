@@ -23,8 +23,8 @@ class BuildingsController < ApplicationController
     end
 
     def create
-        # byebug
         @building = current_owner.buildings.build(building_params)
+        @building.owner_id = current_owner.id
         if @building.save
             redirect_to building_path(@building)
         else
@@ -39,7 +39,7 @@ class BuildingsController < ApplicationController
         @building.update_attributes(building_params)
         if @building.save
             flash[:message] = "Building saved."
-            redirect_to new_apartment_building_path(@building.owner, @building)
+            redirect_to building_path(@building)
         else
             flash[:message] = "Building failed to save."
             render :show

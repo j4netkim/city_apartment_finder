@@ -12,6 +12,7 @@ class Owner < ApplicationRecord
     def self.create_from_omniauth(auth)
         Owner.find_or_create_by(uid: auth['uid'], provider: auth['provider']) do |u|
             u.username = auth['info']['name']
+            u.name = auth['info']['name']
             u.email = auth['info']['email']
             u.password = SecureRandom.hex(20)
         end

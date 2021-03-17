@@ -15,4 +15,5 @@
 <% end %>
 <br /><br />
 <h4 class="pink-text text-lighten-3">Building Apartments</h4>
+<%= link_to 'New Apartment', new_building_apartment_path(@building) %>
 <%= render partial: 'apartments/apartments', collection: @building.apartments, as: :apartment %>

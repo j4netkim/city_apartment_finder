@@ -7,6 +7,11 @@ class Apartment < ApplicationRecord
     validates_numericality_of :rent
     accepts_nested_attributes_for :amenity_apartments
 
+    def available_amenities
+        Amenity.all - self.amenities
+        # get all amenities and show all the amenities this apartment doesnt have
+    end
+
 
     def amenity_types=(amenity_types)
         amenity_types.values.each do |amenity_type|

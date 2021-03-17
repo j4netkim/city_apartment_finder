@@ -1,0 +1,16 @@
+<%= form_for [@building, @apartment] do |f| %>
+    <br />
+    <%= f.label :unit %>
+    <%= f.text_field :unit %>
+    <br />
+    <%= f.label :rent %>
+    <%= f.number_field :rent, min: 0, step: 0.01%>
+    <br />
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+    <br />
+    <%= f.label :occupants %>
+    <%= f.number_field :occupants, min: 0, step: 1 %>
+    <br />
+    <%= f.submit %>
+<% end %>
