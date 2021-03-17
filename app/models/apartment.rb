@@ -26,6 +26,4 @@ end
 
 
 
-    # def self.lowest_rents
-    #     self.order(rent: :desc)
-    #  end
+ 
