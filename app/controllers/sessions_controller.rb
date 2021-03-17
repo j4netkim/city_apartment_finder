@@ -22,16 +22,20 @@ class SessionsController < ApplicationController
 
 
     def omniauth
-        owner = Owner.create_from_omniauth(auth)
-        
-        if owner.valid?
-            session[:owner_id] = owner.id
-            redirect_to owner_path(owner) 
-        else
-            flash[:message] = owner.errors.full_messages.join("")
-            redirect_to log_in_path
-        end
+        @owner = Owner.create_from_omniauth(auth)
+        # if owner.valid?
+        #     owner.save
+        #     session[:owner_id] = owner.id
+        #     redirect_to owner_path(owner) 
+        # else
+        #     flash[:message] = owner.errors.full_messages.join("")
+        #     redirect_to log_in_path
+        @owner.save
+        session[:owner_id] = @owner.id
+        redirect_to owner_path(@owner)
     end
+
+
 
     private
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_14_195016) do
+ActiveRecord::Schema.define(version: 2021_03_17_204353) do
 
   create_table "amenities", force: :cascade do |t|
     t.string "name"
@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(version: 2021_03_14_195016) do
     t.string "password_digest"
     t.string "uid"
     t.string "provider"
+    t.string "google_token"
+    t.string "google_refresh_token"
   end
 
 end
