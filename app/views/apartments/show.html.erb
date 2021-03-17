@@ -1,10 +1,9 @@
-<h4><%= @apartment.unit %></h4>
-
-Apartment's Buildings
-<%= @apartment.building.name %>
+<h4 class="pink-text text-lighten-3">Apartment Unit: <%= @apartment.unit %></h4>
+<br />
+Building: <%= @apartment.building.name %>
 <br /><br />
 
-Apartment's Amenities
+<h5 class="purple-text text-lighten-3">Apartment's Amenities</h5>
 <br />
 <%= link_to("Add a new amenity to #{@apartment.unit}", new_apartment_amenity_apartment_path(@apartment.id)) %>
 <%= render partial: 'amenities/amenities', collection: @apartment.amenities, as: :amenity %>

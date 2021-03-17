@@ -1,9 +1,12 @@
 <%= form_for [@apartment, @amenity_apartment] do |f| %>
     <br />
-   
-            <%= f.collection_select(:amenity, @apartment.available_amenities, :id, :name, :prompt => 'select', :class => "browser-default") %>
+    
+            <%= f.collection_select(:amenity, @apartment.available_amenities, :id, :name, {}, {class: 'browser-default'}) %>
             <%= f.label :amenity %>
 
     <br />
+
     <%= f.submit %>
 <% end %>
+
+
