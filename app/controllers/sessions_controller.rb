@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
     def new
         @owner = Owner.new
     end
-
+    
     def create
         @owner = Owner.find_by(email: params[:owner][:email])
         if @owner && @owner.authenticate(params[:owner][:password])
@@ -11,10 +11,11 @@ class SessionsController < ApplicationController
             redirect_to owner_path(@owner.id)
         else
             flash[:message] = "Invalid email/password."
+            @owner = Owner.new
             render :new
         end
     end
-
+    
     def destroy
         session.delete :owner_id
         redirect_to log_in_path

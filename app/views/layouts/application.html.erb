@@ -25,7 +25,7 @@
   <body class="homepage">
     <nav class="pink lighten-4">
       <div class="container">
-        <a href="/" class="brand-logo">Home</a>
+        <%= link_to 'Home', current_owner.nil? ? '/' : owner_path(current_owner) %>
         <ul class="right">
           <% if logged_in? %>
             <li><a href="/log_out" %>Logout</a></li>
@@ -37,6 +37,7 @@
       </div>
     </nav>
     <div class="container">
+      <%= render partial: 'partials/flash' %>
       <%= button_to("Google Log In", '/auth/google_oauth2') %>
     
       <%= yield %>

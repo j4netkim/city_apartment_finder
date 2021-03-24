@@ -1,11 +1,7 @@
 class AmenitiesController < ApplicationController
     
     def index
-        if params[:apartment_id] && @apartment = Apartment.find_by_id(params[:apartment_id])
-            @amenities = @apartment.amenities.ordered_by_rent
-        else
-            @amenities = Amenity.alphabetical
-        end
+        @amenities = Amenity.alphabetical
     end
 
     def new

@@ -3,7 +3,4 @@ class Building < ApplicationRecord
     has_many :apartments
     validates :name, presence: true
 
-    def self.ordered_by_rent
-        self.order(rent: :desc)
-    end
 end
